@@ -3,6 +3,8 @@ import useSWR from 'swr';
 import { Box } from '@mui/material';
 // Icon for Add Customer button
 import { AddRounded } from '@mui/icons-material';
+import UserTable from '../components/userTable';
+import LoadingSkeleton from '../skeleton/loadingSkeleton';
 
 export type Customer = {
   firstName: string;
@@ -40,17 +42,9 @@ const Home = () => {
       </Head>
       <main>
         <Box>
-          {isLoading && <p>Loading...</p>}
+          {isLoading && <LoadingSkeleton />}
           {error && <p>Error: {error.message}</p>}
-          {data && (
-            <ul>
-              {data.map(customer => (
-                <li key={customer.email}>
-                  {customer.firstName} {customer.lastName}
-                </li>
-              ))}
-            </ul>
-          )}
+          {data && <UserTable data={data} />}
         </Box>
       </main>
     </>
