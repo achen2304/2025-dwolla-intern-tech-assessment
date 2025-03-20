@@ -3,7 +3,7 @@ import type { Customer, Customers, ApiError } from '../index';
 import fsPromises from 'fs/promises';
 import path from 'path';
 
-const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const getCustomers = async () => {
   const filePath = path.join(process.cwd(), 'data/customers.json');
@@ -91,7 +91,7 @@ const handler = async (
       return;
     }
 
-    if (customers.find(customer => customer.email === newCustomer.email)) {
+    if (customers.find((customer) => customer.email === newCustomer.email)) {
       res.status(409).json({
         code: 'DuplicateResource',
         message: 'A customer with that email already exists',
