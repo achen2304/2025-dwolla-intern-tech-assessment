@@ -7,6 +7,7 @@ import {
   SelectChangeEvent,
   Box,
 } from '@mui/material';
+import type { Customer } from '../pages';
 
 // Define the types for the sort field and order
 export type SortField = 'firstName' | 'lastName' | 'email' | 'businessName';
@@ -14,8 +15,8 @@ export type SortOrder = 'asc' | 'desc';
 
 // Define the props for the SortBy component
 interface SortByProps {
-  data: any[];
-  onSortedDataChange: (sortedData: any[]) => void;
+  data: Customer[];
+  onSortedDataChange: (sortedData: Customer[]) => void;
 }
 
 const SortBy = ({ data, onSortedDataChange }: SortByProps) => {

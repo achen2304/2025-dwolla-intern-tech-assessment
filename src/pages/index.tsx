@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import useSWR from 'swr';
 import { Box } from '@mui/material';
-// Icon for Add Customer button
-import { AddRounded } from '@mui/icons-material';
 import UserTable from '../components/userTable';
 import LoadingSkeleton from '../skeleton/loadingSkeleton';
 

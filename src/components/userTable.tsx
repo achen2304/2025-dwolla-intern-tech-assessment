@@ -12,7 +12,7 @@ import {
   useTheme,
   Snackbar,
 } from '@mui/material';
-import type { Customer, Customers } from '../pages/index';
+import type { Customers } from '../pages/index';
 import Search from './search';
 import AddUser from './addUser';
 import SortBy from './sortBy';

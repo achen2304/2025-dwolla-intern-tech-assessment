@@ -1,22 +1,18 @@
 import * as React from 'react';
 import { TextField, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import type { Customer } from '../pages';
 
 // Define the props for the Search component
 interface SearchProps {
   value: string;
-  data: any[];
-  onDataChange: (filteredData: any[]) => void;
+  data: Customer[];
+  onDataChange: (filteredData: Customer[]) => void;
   onSearch: (value: string) => void;
 }
 
 // Define the Search component
-const Search = ({
-  value,
-  data,
-  onDataChange,
-  onSearch,
-}: SearchProps) => {
+const Search = ({ value, data, onDataChange, onSearch }: SearchProps) => {
   const handleSearch = (searchValue: string) => {
     onSearch(searchValue);
     if (!searchValue) {
